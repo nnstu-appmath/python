@@ -61,19 +61,18 @@
 
 Вот пример базового `.pre-commit-config.yaml` файла:
 ```
-repos:  
- - repo: https://github.com/pre-commit/mirrors-mypy  
-    rev: v0.812  
-   hooks:   
-      - id: mypy    
+repos:
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.812
+    hooks:
+      - id: mypy
         args: [--ignore-missing-imports, --strict-optional]  
-
-  - repo: https://github.com/pre-commit/pre-commit-hooks  
-    rev: v4.0.1  
-    hooks:  
-      - id: end-of-file-fixer  
-      - id: trailing-whitespace  
-      - id: check-yaml  
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-yaml 
 ```
 В этом примере мы используем два `pre-commit` репозитория с их указанными версиями. Хук `mypy` из репозитория `pre-commit/mirrors-mypy` проверит аннотации типов в коде, а хуки `end-of-file-fixer`, `trailing-whitespace` и `check-yaml` из репозитория `pre-commit/pre-commit-hooks` исправят конец файла, завершающий пробел и проверят YAML файлы соответственно.   
 
